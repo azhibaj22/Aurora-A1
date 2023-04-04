@@ -64,6 +64,28 @@ double operationType (char o)
         return 0;
 
 }
+
+double areaCircle(int radius)
+{
+    return (double) radius*radius*3.141;
+}
+
+double perimeterCircle(int radius)
+{
+    return (double) 2*radius*3.141;
+}
+
+double areaOrPeri(char o)
+{
+    int r;
+    scanf("%d", &r);
+    if (o=='a')
+        return areaCircle(r);
+    else if (o=='p')
+        return perimeterCircle(r);
+    return 0;
+}
+
 int main()
 {
     double result;
@@ -71,5 +93,10 @@ int main()
     scanf("%c", &opera);
     result=operationType(opera);
     printf("%.2lf", result);
+
+    char aOp;
+    scanf("%c", &aOp);
+    double result2 = areaOrPeri(aOp);
+    printf("%.2lf", result2);
     return 0;
 }
